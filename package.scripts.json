@@ -1,0 +1,6 @@
+{
+	"hello": "echo 'hello world'",
+	"lint" : "eslint . --ext .js",
+	"lint-fix" : "eslint . --fix",
+	"dev": "rimraf ./dist && webpack --mode=development --watch"
+}
