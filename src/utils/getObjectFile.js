@@ -9,29 +9,38 @@ import { isObject } from './object.js'
 import yaml         from 'js-yaml'
 import { not }      from './notifications.js'
 
-export const getObjectFile = ( file ) => {
+const getContentFile = ( filePath ) => {
 
-	let res
-
-	res = fs.readFileSync( 
-		file,
+	return fs.readFileSync( 
+		filePath,
 		{
 			encoding : 'utf-8',
 		}, 
 	)
 
-	if ( file.pathname.endsWith( '.yml' ) || file.pathname.endsWith( '.yaml' ) ) {
+}
 
-		res = yaml.load( res )
-	
-	}else {
+const setObject = ( filePath, fileContent ) => {
 
-		res = JSON.parse( res )
+	if ( filePath.endsWith( '.yml' ) || filePath.endsWith( '.yaml' ) ) return yaml.load( fileContent )
 	
-	}
+	return JSON.parse( fileContent )
 
-	if( !isObject( res ) ) throw not.throwError( 'File "' + file + '" must return a object' )
+}
+
+export const getObjectFile = ( filePath ) => {
+
+	let res
+
+	res = setObject(
+		filePath, 
+		getContentFile( filePath ),
+	)
+
+	if( isObject( res ) ) return res
+
+	not.error( 'File "' + filePath + '" must return a object' )
 	
-	return res
+	return false
 
 }

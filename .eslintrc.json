@@ -6,11 +6,12 @@
 	    "jest": true
 	},
 	"parserOptions" : {
+		"ecmaVersion": 13,
 		"sourceType": "module",
 		"allowImportExportEverywhere": true
 	},
 	"extends" : [
-		"@pigeon-posse", 
+		"@pigeon-posse/eslint-config", 
 		"plugin:jsdoc/recommended",
 		"plugin:json/recommended",
 		"plugin:import/recommended"
@@ -114,7 +115,7 @@
 			}
 		]
 	},
-	"ignorePatterns": [ "dist/*.js"],
+	"ignorePatterns": [ "dist/*"],
     "overrides": [
         {
             "files": ["*.json"],

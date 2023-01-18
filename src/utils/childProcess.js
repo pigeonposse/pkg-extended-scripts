@@ -4,14 +4,16 @@
  * @description For execute command.
  *
  */
-import { spawn } from 'child_process'
+import { spawnSync } from 'child_process'
 
-export const childProcess = async ( key, value ) => {
+export const childProcess = ( value ) => {
 
-	await spawn( value, {
-		shell : true,
-		stdio : 'inherit',
-	} )
+	spawnSync( 
+		value, 
+		{
+			shell : true,
+			stdio : 'inherit',
+		},
+	)
 
 }
-

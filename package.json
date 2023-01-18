@@ -1,41 +1,44 @@
 {
 	"name": "@pigeon-posse/pkg-extended-scripts",
-	"version": "0.1.0",
-	"description": "Separate scripts from pacakage.json",
-	"main": "index.js",
+	"version": "0.3.0",
+	"description": "Separate scripts from package.json",
 	"type": "module",
+	"main": "dist/bundle.js",
+	"exports": "dist/bundle.js",
 	"bin": {
-		"pkg-extended-scripts": "./index.js",
-		"pes": "./index.js"
+		"pkg-extended-scripts": "dist/bundle.js",
+		"pes": "dist/bundle.js"
+	},
+	"engines": {
+		"node": "^12.17.0 || ^14.13 || >=16.0.0"
 	},
 	"scripts": {
-		"start": "npx pes",
-		"updates": "sudo npm i -g npm-check-updates && ncu -u && npm install",
-		"deploy": "npm run lint:fix && npm login && npm publish --access public",
-		"lint": "concurrently \"npm:lint:*(!fix)\"",
+		"start": "pnpm i",
+		"update": "pnpm up",
+		"test": "node src/main.js",
+		"build": "pnpm lint-fix && pnpm build-bundle && pnpm build-test",
+		"build-bundle": "node esbuild.config.js",
+		"build-test": "node dist/bundle.js",
+		"deploy": "pnpm lint:fix && npm publish --access public",
+		"lint": "pnpm lint:js",
 		"lint:js": "eslint . --ext .js",
-		"lint:fix": "concurrently \"npm:lint:fix:*\"",
-		"lint:fix:js": "eslint . --ext .js"
+		"lint-fix": "pnpm lint-fix:js",
+		"lint-fix:js": "eslint . --ext .js --fix"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.20.5",
-		"@babel/eslint-parser": "^7.19.1",
-		"@babel/preset-env": "^7.20.2",
 		"@pigeon-posse/eslint-config": "^1.0.1",
-		"babel-jest": "^29.3.1",
-		"babel-loader": "^9.1.0",
-		"eslint": ">= 8",
-		"eslint-plugin-align-assignments": ">= 1",
+		"esbuild": "^0.17.2",
+		"eslint": "^8.32.0",
+		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-html": "^7.1.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-jsdoc": "^39.3.6",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsdoc": "^39.6.4",
 		"eslint-plugin-json": "^3.1.0",
-		"eslint-plugin-promise": ">= 6",
-		"jest": "^29.3.1"
+		"eslint-plugin-promise": "^6.1.1"
 	},
 	"dependencies": {
-		"chalk": "^5.0.1",
+		"chalk": "^5.2.0",
 		"js-yaml": "^4.1.0"
 	},
 	"keywords": [
