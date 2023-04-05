@@ -10,7 +10,7 @@ web:
     subtype: node
     version: "{{package.version}}"
     description: "{{package.description}}"
-    homepage: "{{package.homepage}}"
+    homepage: "https://www.npmjs.com/package/@pigeon-posse/pkg-extended-scripts"
     repo: "https://github.com/pigeonposse/{{package.name}}"
     logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
     banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/banner.png"
