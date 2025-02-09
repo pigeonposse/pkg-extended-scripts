@@ -3,16 +3,17 @@
 ###############################################################################
 
 web:
-  
-  - id: "{{package.name}}"
-    name: Package extended scripts
-    type: cli
-    subtype: node
-    version: "{{package.version}}"
-    description: "{{package.description}}"
-    homepage: "https://www.npmjs.com/package/@pigeon-posse/pkg-extended-scripts"
-    repo: "https://github.com/pigeonposse/{{package.name}}"
-    logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
-    banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/banner.png"
-
+  pes:
+    name: "Package extended scripts"
+    type:
+      - cli
+      - bin
+      - library
+    status: "active"
+    version: "0.3.0"
+    homepage: https://www.npmjs.com/package/@pigeon-posse/pkg-extended-scripts
+    desc: "Separate scripts from package.json"
+    logo: "https://raw.githubusercontent.com/pigeonposse/pkg-extended-scripts/main/docs/logo.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/pkg-extended-scripts/main/docs/header.png"
+    
 ###############################################################################
