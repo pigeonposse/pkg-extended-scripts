@@ -77,6 +77,7 @@ npm install @pigeon-posse/pkg-extended-scripts
 1. create a file named ```pes.config.{js,cjs,mjs,cjs,ts,mts,cts}```.
 2. Write your scripts to the file. for example:
 	```js
+	/** @type {import('@pigeon-posse/pkg-extended-scripts').Config} */
 	export default {
 	  "hello" : () => console.log( 'Hello Pigeon 🕊️🌈' ),
 	}
@@ -88,11 +89,12 @@ That's it, now you can list all your scripts in a separate file to the package.j
 ### Optional
 If you use the package it may be good practice to leave a scripts in the package.json that indicates that the scripts are in a separate file. For example:
 - In ```package.json```
+
 ```json
 {
-	"scripts" : {
-		"ext-scripts": "npx pes"
-	}
+  "scripts" : {
+     "ext-scripts": "npx @pigeon-posse/pkg-extended-scripts"
+  }
 }
 ```
 
