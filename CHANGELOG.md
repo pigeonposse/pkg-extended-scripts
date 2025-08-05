@@ -1,5 +1,11 @@
 # @pigeon-posse/pkg-extended-scripts
 
+## 1.0.1
+
+### Patch Changes
+
+- up ci
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@pigeon-posse/pkg-extended-scripts",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Separate scripts from package.json",
 	"keywords": [
 		"cli",
@@ -75,6 +75,10 @@
 	"engines": {
 		"node": ">=20.0.0",
 		"pnpm": ">=8.10.0"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"extra": {
 		"id": "pkg-extended-scripts",
