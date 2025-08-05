@@ -1,4 +1,0 @@
-{
-	"hello": "echo 'hello world 🐦🌈'",
-	"cmd" : "pnpm --version"
-}

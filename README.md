@@ -74,12 +74,11 @@ npm install @pigeon-posse/pkg-extended-scripts
 
 ## ⚙️ Usage
 
-1. create a file named ```package.scripts.json```, you can use the extensions ```.js``` or ```.yml``` and ```yaml```.
+1. create a file named ```pes.config.{js,cjs,mjs,cjs,ts,mts,cts}```.
 2. Write your scripts to the file. for example:
-	- In ```package.scripts.json```
-	```json
-	{
-		"hello" : "echo 'Hello pigeon 🐦🌈'"
+	```js
+	export default {
+	  "hello" : () => console.log( 'Hello Pigeon 🕊️🌈' ),
 	}
 	```
 3. Run these scripts using the ```pes``` or ```pkg-extended-scripts``` **commands**
@@ -114,7 +113,7 @@ Help us to develop more interesting things.
 
 ## 📜 License
 
-This software is licensed with GPLv3 (GNU GENERAL PUBLIC LICENSE Version 3)
+This software is licensed with MIT License
 
 [![Read more](https://img.shields.io/badge/Read-more-grey?style=flat-square)](https://github.com/pigeon-posse/pkg-extended-scripts/blob/main/LICENSE)
 
