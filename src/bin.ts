@@ -3,8 +3,23 @@
 import { hideBin } from 'clippium'
 import { argv }    from 'node:process'
 
-import cli from './cli'
+import cli  from './cli'
+import {
+	version,
+	pkgName,
+} from './data'
+import { updater } from './updater'
 
 const args = hideBin( argv )
 
-cli.run( args )
+const run = async () => {
+
+	await cli.run( args )
+	await updater( {
+		name    : pkgName,
+		version : version,
+	} )
+
+}
+
+run()

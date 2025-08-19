@@ -1,6 +1,6 @@
 {
 	"name": "@pigeon-posse/pkg-extended-scripts",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Separate scripts from package.json",
 	"keywords": [
 		"cli",
@@ -49,6 +49,7 @@
 	"scripts": {
 		".": "dovenv",
 		"build": "pnpx unbuild",
+		"build-bin": "binarium node -c build.bin.js",
 		"dev": "pnpx tsx src/bin.ts",
 		"lint:commit": "dovenv lint commitlint --silent",
 		"lint:eslint": "dovenv lint eslint --silent",
@@ -57,17 +58,19 @@
 		"prepare": "dovenv git husky --silent"
 	},
 	"dependencies": {
-		"@clippium/color": "1.0.1",
-		"@clippium/preset-colored": "1.0.1",
-		"@clippium/preset-config": "1.0.1",
-		"clippium": "1.0.1"
+		"@clippium/color": "~1.0.2",
+		"@clippium/preset-colored": "~1.0.2",
+		"@clippium/preset-config": "~1.0.2",
+		"@clippium/updater": "~1.0.2",
+		"clippium": "~1.0.2"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "0.5.1",
 		"@dovenv/core": "1.6.1",
 		"@dovenv/theme-pigeonposse": "1.6.1",
-		"@types/node": "24.2.0",
-		"eslint": "9.32.0",
+		"@types/node": "24.3.0",
+		"binarium": "2.1.2",
+		"eslint": "9.33.0",
 		"tslib": "2.8.1",
 		"typescript": "5.9.2"
 	},

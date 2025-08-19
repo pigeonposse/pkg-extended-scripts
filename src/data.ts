@@ -8,6 +8,7 @@ import {
 import {
 	name,
 	version,
+	extra,
 	description,
 } from '../package.json'
 
@@ -15,9 +16,11 @@ const desc       = color.white.dim
 const errorStyle = color.redBright
 
 export const PES_FILENAME = 'pes.config' as const
+export const pkgName = name
+export { version }
 
 export const data = defineData( {
-	name,
+	name        : extra.id,
 	version,
 	desc        : description,
 	positionals : { key : {
