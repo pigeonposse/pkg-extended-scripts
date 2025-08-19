@@ -1,5 +1,11 @@
 # @pigeon-posse/pkg-extended-scripts
 
+## 1.1.2
+
+### Patch Changes
+
+- fix release in gh
+
 ## 1.1.1
 
 ### Patch Changes

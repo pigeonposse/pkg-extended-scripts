@@ -117,7 +117,7 @@ jobs:
         uses: ncipollo/release-action@v1
         if: steps.updated.outputs.core_version != ''
         with: 
-          tag: "${{ steps.updated.outputs.core_version }}"
+          tag: "v${{ steps.updated.outputs.core_version }}" # same as changesets/action@v1
           draft: false
           prerelease: false
           allowUpdates: true
