@@ -79,6 +79,7 @@ jobs:
       - name: 🏗 Build
         run: |
           pnpm build
+          pmpm build-bin
 
       #########################################################################
       # PUBLISH
